@@ -1,23 +1,23 @@
 {
   "name": "express-node-rest-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "API for Lineage 2 Brave Arena",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "iTz-Maleficas (Geronimo Olivera)",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
-    "mysql": "^2.14.1"
+    "mysql": "^2.14.1",
+    "nodemailer": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^4.7.0",
     "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-config-google": "^0.9.1",
     "eslint-plugin-import": "^2.7.0"
   }
 }
