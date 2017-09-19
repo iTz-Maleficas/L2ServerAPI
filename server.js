@@ -1,10 +1,18 @@
 const express = require('express');
 
 const app = express();
+const cors = require('cors');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const jwt = require('express-jwt');
+
 const list = require('./engine/list.js');
 const account = require('./engine/account.js');
+const auth = require('./engine/auth.js');
+
+const jwtCheck = jwt({
+  secret: 'never give up',
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -24,6 +32,12 @@ mc.connect();
 
 // default route
 app.get('/', (req, res) => res.send({ error: true, message: 'hello' }));
+
+// use JWT Token security
+app.use('/', jwtCheck);
+
+// authentication
+app.use('/auth', auth);
 
 // general info
 app.use('/list', list);
